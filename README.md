@@ -30,3 +30,18 @@ curl --location 'localhost:8000/scrape/' \
     "pages": "2"
 }'
 ```
+
+Image will be stored in local directory ```./images```
+Product details will be saved in ```.products.json```
+
+Sample from ```products.json```
+```
+[
+    {
+        "url": "https://dentalstall.com/wp-content/uploads/2021/11/GDC-Extraction-Forceps-Lower-Molars-86A-Standard-FX86AS-300x300.jpg",
+        "path_to_image": "/Users/adityar/Documents/Personal/web-scraper/images/1 x GDC Extraction Forceps Lower Molars  86 Ergonomic FX86E118.png",
+        "product_title": "1 x GDC Extraction Forceps Lower Molars - 86 Ergonomic (FX86E)118",
+        "product_price": 850.0
+    },
+]
+```
