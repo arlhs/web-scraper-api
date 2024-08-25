@@ -1,11 +1,11 @@
 ##### Create a virtual environment inside your project
-```python -m venv .venv```
+```python3 -m venv .venv```
 ```source .venv/bin/activate```
 
 ##### Upgrade & Install the dependency
 Python Version required: 3.12
 ```pip install -r requirements.txt```
-```python -m pip install --upgrade pip```
+```python3 -m pip install --upgrade pip```
 
 ##### Install Redis for MAC
 ```brew install redis```
