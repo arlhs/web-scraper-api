@@ -1,9 +1,9 @@
 ##### Create a virtual environment inside your project
+Python Version required: 3.12
 ```python3 -m venv .venv```
 ```source .venv/bin/activate```
 
 ##### Upgrade & Install the dependency
-Python Version required: 3.12
 ```python3 -m pip install --upgrade pip```
 ```pip install -r requirements.txt```
 
