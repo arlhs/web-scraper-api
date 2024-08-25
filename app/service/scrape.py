@@ -1,3 +1,4 @@
+import aiohttp
 from aiohttp import ClientSession
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
@@ -83,7 +84,9 @@ async def scrapeWebsite(url: str, page: int) -> list:
     return productDetailsArray
 
 async def get_html(url: str) -> BeautifulSoup:
-    async with ClientSession(trust_env=True) as session:
+    #disabling https verification as the website is not secure/ certificate is expired
+    connector = aiohttp.TCPConnector(ssl=False)
+    async with ClientSession(connector=connector) as session:
         async with session.get(url) as response:
             text = await response.text()
 
@@ -102,7 +105,9 @@ async def saveImage(url,title):
     imageName = f"{re.sub(r'[^a-zA-Z0-9\s]', '', title)}.png"
     imagePath = f"{dirToSave}/{imageName}"
 
-    async with ClientSession() as session:
+    #disabling https verification as the website is not secure/ certificate is expired
+    connector = aiohttp.TCPConnector(ssl=False)
+    async with ClientSession(connector=connector) as session:
         async with session.get(url) as response:
             image = await response.read()
             with open(imagePath, "wb") as f:
